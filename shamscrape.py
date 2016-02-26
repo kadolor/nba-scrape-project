@@ -69,7 +69,6 @@ for year in years_salary:
 	df = pd.DataFrame(team_rank_list.items())
 	df.columns = ['Team', 'Salary']
 	df.insert(1, 'Year',year)
-	# df['Rank'] = df.groupby(['Year'])['Salary'].rank(ascending=False, method='max')
 	results_list_salary_0709.append(df)
 
 frame_salary_0709 = pd.concat(results_list_salary_0709)
