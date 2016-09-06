@@ -5,7 +5,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pandas import DataFrame
 from shamscrape import knicks_master
+import statsmodels.api as sm
+from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
+from sklearn.cross_validation import cross_val_predict
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
 
+
+lm = LinearRegression()
+lr = linear_model.LinearRegression()
+
+X = knicks_master['Salary Rank']
+Y = knicks_master['Conference Rank']
 """
 	This script plots New York Knicks' payroll and conference standing data.
     Copyright (C) 2016  Kelly-Ann R. Dolor
@@ -24,6 +36,11 @@ from shamscrape import knicks_master
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-#df.plot(x='Salary', y='Winning pct', style='o')
-sns.regplot(y="Salary", x="Winning pct", data= knicks_master, fit_reg = True)
-plt.show()
+#df.plot(x='Salary Rank', y='Conference Rank', style='o')
+#sns.regplot(y="Salary Rank", x="Conference Rank", data= knicks_master, fit_reg = True)
+
+m = ols('')
+
+# lm.fit(X, Y)
+# plt.show()
+
